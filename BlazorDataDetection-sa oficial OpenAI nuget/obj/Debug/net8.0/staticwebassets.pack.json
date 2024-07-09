@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "W:\\CodeExamples\\BlazorDataDetection-sa oficial OpenAI nuget\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorDataDetection.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BlazorDataDetection.bundle.scp.css"
+    },
+    {
+      "Id": "W:\\CodeExamples\\BlazorDataDetection-sa oficial OpenAI nuget\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "W:\\CodeExamples\\BlazorDataDetection-sa oficial OpenAI nuget\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "W:\\CodeExamples\\BlazorDataDetection-sa oficial OpenAI nuget\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "W:\\CodeExamples\\BlazorDataDetection-sa oficial OpenAI nuget\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlazorDataDetection.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BlazorDataDetection.props",
+      "PackagePath": "build\\BlazorDataDetection.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BlazorDataDetection.props",
+      "PackagePath": "buildMultiTargeting\\BlazorDataDetection.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BlazorDataDetection.props",
+      "PackagePath": "buildTransitive\\BlazorDataDetection.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

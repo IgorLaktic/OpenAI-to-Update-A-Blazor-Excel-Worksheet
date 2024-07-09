@@ -1,0 +1,552 @@
+﻿@page "/"
+@using Api
+@using BlazorDatasheet
+@using BlazorDatasheet.Core.Data
+@using System.Data
+@using BlazorDatasheet.Core.Events
+@using BlazorDatasheet.Core.Formats
+
+@using System.Text
+@using Newtonsoft.Json
+
+@using BlazorDatasheet.Core.Interfaces
+@using BlazorDatasheet.DataStructures.Geometry
+@using BlazorDatasheet.Formula.Core
+@using OpenAI
+@using OpenAI.Chat
+
+@inject OpenAIService OpenAIService
+
+<PageTitle>Home</PageTitle>
+
+<select @onchange="@(async (args) => await LoadTableData(args.Value?.ToString()))">
+    <option value="TableOne">Table One</option>
+    <option value="TableTwo">Table Two</option>
+    </select>
+<br />
+<br />
+@if (IsLoadingSheet)
+{
+    <div class="spinner-border" role="status"></div>
+}
+else
+{
+    <Datasheet Sheet="@sheet" />
+}
+<br />
+<br />
+@if (IsLoading)
+{
+    <div class="spinner-border" role="status"></div>
+}
+else
+{
+    <button @onclick="btnSubmit">Submit</button>
+    <span>&nbsp;</span>
+    <button @onclick="btnShowLog">Log</button>
+    if(CanApplyChanges)
+    {
+        <span>&nbsp;</span>
+        <button @onclick="btnApplyChanges">Apply Changes</button>
+    }
+}
+<br />
+<br />
+@if (ShowLog)
+{
+    <textarea rows="10" style="width:80%; overflow:auto;border-width:thin">@strAIResponse</textarea>
+}
+<br />
+<p style="color:red">@Message</p>
+@code{
+    #nullable disable
+    private Sheet sheet;
+
+    List<string> TableColumns = new List<string>();
+    DataTable OrginalDataTable = new DataTable();
+    DataTable CurrentDataTable = new DataTable();
+
+    // List<OpenAI.Chat.Message> ChatMessages = new List<OpenAI.Chat.Message>();
+    List<ChatMessage> ChatMessages = new List<ChatMessage>();
+
+    string Message = string.Empty;
+    string strAIResponse = "";
+
+    bool IsLoadingSheet = true;
+    bool IsLoading = false;
+    bool ShowLog = false;
+    bool CanApplyChanges = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadTableData("TableOne");
+    }
+
+    private void InitializeDataTable(string paramTableName)
+    {
+        // Create a DataTable
+        OrginalDataTable = new DataTable();
+
+        if (paramTableName == "TableOne")
+        {
+            OrginalDataTable.Columns.Add("Id", typeof(int));
+            OrginalDataTable.Columns.Add("Name", typeof(string));
+            OrginalDataTable.Columns.Add("Description", typeof(string));
+            OrginalDataTable.Columns.Add("Price", typeof(decimal));
+            OrginalDataTable.Columns.Add("Quantity", typeof(int));
+
+            // Add 10 rows of sample data
+            OrginalDataTable.Rows.Add(1, "Product 1", "Description 1", 10.00, 100);
+            OrginalDataTable.Rows.Add(2, "Product 2", "Description 2", 20.00, 200);
+            OrginalDataTable.Rows.Add(3, "Product 3", "Description 3", 30.00, 300);
+            OrginalDataTable.Rows.Add(4, "Product 4", "Description 4", 40.00, 400);
+            OrginalDataTable.Rows.Add(5, "Product 5", "Description 5", 50.00, 500);
+            OrginalDataTable.Rows.Add(6, "Product 6", "Description 6", 60.00, 600);
+            OrginalDataTable.Rows.Add(7, "Product 7", "Description 7", 70.00, 700);
+            OrginalDataTable.Rows.Add(8, "Product 8", "Description 8", 80.00, 800);
+            OrginalDataTable.Rows.Add(9, "Product 9", "Description 9", 90.00, 900);
+            OrginalDataTable.Rows.Add(10, "Product 10", "Description 10", 100.00, 1000);
+        }
+
+        if (paramTableName == "TableTwo")
+        {
+            OrginalDataTable.Columns.Add("Id", typeof(int));
+            OrginalDataTable.Columns.Add("FirstName", typeof(string));
+            OrginalDataTable.Columns.Add("LastName", typeof(string));
+            OrginalDataTable.Columns.Add("Email", typeof(string));
+            OrginalDataTable.Columns.Add("Phone", typeof(string));
+            OrginalDataTable.Columns.Add("City", typeof(string));
+            OrginalDataTable.Columns.Add("State", typeof(string));
+            OrginalDataTable.Columns.Add("Zipcode", typeof(string));
+
+            // Add 10 rows of sample data
+            OrginalDataTable.Rows.Add(1, "John", "Doe", "john.doe@example.com", "555-1234", "Los Angeles", "CA", "90001");
+            OrginalDataTable.Rows.Add(2, "Jane", "Smith", "jane.smith@example.com", "555-5678", "San Francisco", "CA", "94101");
+            OrginalDataTable.Rows.Add(3, "Michael", "Johnson", "michael.johnson@example.com", "555-8765", "San Diego", "CA", "92101");
+            OrginalDataTable.Rows.Add(4, "Emily", "Davis", "emily.davis@example.com", "555-4321", "Sacramento", "CA", "95814");
+            OrginalDataTable.Rows.Add(5, "David", "Wilson", "david.wilson@example.com", "555-3456", "Fresno", "CA", "93701");
+            OrginalDataTable.Rows.Add(6, "Emma", "Brown", "emma.brown@example.com", "555-7890", "Long Beach", "CA", "90802");
+            OrginalDataTable.Rows.Add(7, "James", "Miller", "james.miller@example.com", "555-6789", "Oakland", "CA", "94601");
+            OrginalDataTable.Rows.Add(8, "Olivia", "Martinez", "olivia.martinez@example.com", "555-0987", "Bakersfield", "CA", "93301");
+            OrginalDataTable.Rows.Add(9, "William", "Garcia", "william.garcia@example.com", "555-6543", "Anaheim", "CA", "92801");
+            OrginalDataTable.Rows.Add(10, "Sophia", "Anderson", "sophia.anderson@example.com", "555-3210", "Santa Ana", "CA", "92701");
+            OrginalDataTable.Rows.Add(11, "Benjamin", "Lee", "benjamin.lee@example.com", "555-1357", "Irvine", "CA", "92602");
+            OrginalDataTable.Rows.Add(12, "Isabella", "Harris", "isabella.harris@example.com", "555-2468", "Modesto", "CA", "95350");
+            OrginalDataTable.Rows.Add(13, "Ethan", "Clark", "ethan.clark@example.com", "555-9876", "Chula Vista", "CA", "91910");
+            OrginalDataTable.Rows.Add(14, "Mia", "Lewis", "mia.lewis@example.com", "555-6780", "Fremont", "CA", "94536");
+            OrginalDataTable.Rows.Add(15, "Alexander", "Robinson", "alexander.robinson@example.com", "555-4326", "San Bernardino", "CA", "92401");
+            OrginalDataTable.Rows.Add(16, "Charlotte", "Walker", "charlotte.walker@example.com", "555-5432", "Fontana", "CA", "92335");
+            OrginalDataTable.Rows.Add(17, "Daniel", "Young", "daniel.young@example.com", "555-8762", "Oxnard", "CA", "93030");
+            OrginalDataTable.Rows.Add(18, "Amelia", "Allen", "amelia.allen@example.com", "555-3457", "Moreno Valley", "CA", "92551");
+            OrginalDataTable.Rows.Add(19, "Lucas", "King", "lucas.king@example.com", "555-5672", "Huntington Beach", "CA", "92647");
+            OrginalDataTable.Rows.Add(20, "Harper", "Scott", "harper.scott@example.com", "555-7894", "Glendale", "CA", "91203");
+        }
+    }
+
+    private async Task LoadTableData(string paramTableName)
+    {
+        IsLoadingSheet = true;
+
+        strAIResponse = "";
+        Message = "";
+
+        InitializeDataTable(paramTableName);
+
+        // Get a list of the columns from the DataTable
+        TableColumns = OrginalDataTable.Columns.Cast<DataColumn>().Select(x => x.ColumnName).ToList();
+
+        // Create sheet with the number of columns
+        sheet = new Sheet(OrginalDataTable.Rows.Count, TableColumns.Count);
+
+        // Wait 1 second before loading the table data
+        // to join the UI thread
+        await Task.Delay(1000);
+
+        // Turn off history
+        sheet.BatchUpdates();
+        sheet.Commands.PauseHistory();
+
+        int i = 0;
+        foreach (string objDatabaseColumn in TableColumns)
+        {
+            sheet.Columns.SetHeadings(i, i, objDatabaseColumn);  
+            i++;
+        }
+
+        int ii = 0;
+        foreach (DataRow dataRow in OrginalDataTable.Rows)
+        {
+            i = 0;
+            foreach (string objDatabaseColumn in TableColumns)
+            {
+                // Set the value of the cell
+                sheet.Cells[ii, i].Value = dataRow[i].ToString();
+
+                // Make the first column read only and hidden and an integer
+                if (i==0)
+                {
+                    sheet.Cells[ii, i].Format = new CellFormat() { IsReadOnly = true };
+                    sheet.Cells[ii, i].Type = "int";
+                }
+                else
+                {
+                    sheet.Cells[ii, i].Format = new CellFormat() { IsReadOnly = false };
+                    sheet.Cells[ii, i].Type = "string";
+                }
+
+                i++;
+            }
+
+            ii++;
+        }
+
+        // Hide the Id column
+        // sheet.Columns.SetWidth(0, 0);
+       
+
+        // Turn on history
+        sheet.EndBatchUpdates();
+        sheet.Commands.ResumeHistory();
+
+        IsLoadingSheet = false;
+    }
+
+    private async Task btnSubmit()
+    {
+        try
+        {
+            Message = "";
+            strAIResponse = "";
+            IsLoading = true;
+            await SubmitData();
+            IsLoading = false;
+        }
+        catch (Exception ex)
+        {
+            Message = ex.GetBaseException().Message;
+        }
+    }
+
+    private async Task SubmitData()
+    {
+        // Initialize a new DataTable
+        CurrentDataTable = new DataTable();
+
+        // Define columns based on TableColumns
+        foreach (var column in TableColumns)
+        {
+            CurrentDataTable.Columns.Add(new DataColumn(column));
+        }
+
+        // Populate the DataTable with rows from the sheet
+        for (int i = 0; i < sheet.NumRows; i++)
+        {
+            DataRow row = CurrentDataTable.NewRow();
+
+            for (int j = 0; j < TableColumns.Count; j++)
+            {
+                try
+                {
+                    string currentValue = sheet.Cells[i, j].Value?.ToString() ?? "";
+
+                    currentValue = currentValue.Replace("\r\n", " ")
+                                               .Replace("\t", " ")
+                                               .Replace("\r", " ")
+                                               .Replace("\n", " ")
+                                               .Trim();
+                    row[j] = currentValue;
+                }
+                catch
+                {
+                    row[j] = "";
+                }
+            }
+
+            CurrentDataTable.Rows.Add(row);
+        }
+
+        await GetChanges();
+    }
+
+    public async Task GetChanges()
+    {
+        try
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Please examine the following data to determine how the data has changed.");
+            sb.AppendLine("");
+            sb.AppendLine("For all data here are the column headers.");
+            sb.AppendLine("");
+            sb.AppendLine(string.Join(",", TableColumns));
+            sb.AppendLine("");
+            sb.AppendLine("The following show the #Original and #Updated Data:");
+            sb.AppendLine("");
+
+            var drOrginal = OrginalDataTable.Rows;
+            var drCurrent = CurrentDataTable.Rows;
+
+            // Convert to Arrays
+            var arrOrginal = drOrginal.Cast<DataRow>().Select(x => x.ItemArray).ToArray();
+            var arrCurrent = drCurrent.Cast<DataRow>().Select(x => x.ItemArray).ToArray();
+
+            // Convert each item array to a string for proper joining
+            var originalStrings = arrOrginal.Select(array => string.Join(",", array.Select(item => item.ToString())));
+            var currentStrings = arrCurrent.Select(array => string.Join(",", array.Select(item => item.ToString())));
+
+            sb.AppendLine("#Original: " + string.Join("; ", originalStrings));
+            sb.AppendLine("#Updated: " + string.Join("; ", currentStrings));  
+
+            sb.AppendLine("");
+            sb.AppendLine("Infer any validation rules such as spelling or formatting or other logical rules. ");
+            sb.AppendLine("Infer that any changed data is the correct data and the previous data is incorrect. ");
+            sb.AppendLine("");
+
+            sb.AppendLine("");
+            sb.AppendLine("Please indicate what cells in #Updated, that have not been updated, ");
+            sb.AppendLine("that should be highlighted as being affected by the validation rules. ");
+            sb.AppendLine("As the final response please return a .json result surounded by ###JSON-START and JSON-END###. ");
+            sb.AppendLine("Use this format: [{ 'row number': 'value', 'column number': 'value', 'validation Reason': 'reason1'}]");
+            sb.AppendLine("For example: ");
+            sb.AppendLine("{'row number': '1', 'column number': '2', 'validation Reason': 'Data missing'},");
+            sb.AppendLine("{'row number': '2', 'column number': '4', 'validation Reason': 'Invalid format'}");
+            sb.AppendLine("");
+
+            // *** Call AI
+
+            // Create a list of messages
+           
+            List<ChatMessage> messages = new List<ChatMessage>()
+            {
+                new SystemChatMessage("You are a helpful assistant.."),
+                new UserChatMessage(sb.ToString())
+            };
+
+            // Call the OpenAI service
+            ChatMessages = await OpenAIService.CallOpenAIService(messages);
+
+            // Get the last response
+            strAIResponse = ChatMessages.LastOrDefault().Content[0].Text;
+           
+            // Get the JSON response from the content between ###JSON-START and JSON-END###
+            int intStart = strAIResponse.IndexOf("###JSON-START###");
+            int intEnd = strAIResponse.IndexOf("###JSON-END###");
+
+            // Get the JSON from the response
+            string strJSON = "";
+
+            if (intStart > 0 && intEnd > 0)
+            {
+                strJSON = strAIResponse.Substring(intStart + 16, intEnd - intStart - 16);
+            }    
+
+            // If the JSON is not empty, then parse it
+            if (!string.IsNullOrEmpty(strJSON))
+            {
+                // Strip out ```json
+                strJSON = strJSON.Replace("```json", "");
+
+                // Strip out ```
+                strJSON = strJSON.Replace("```", "");
+
+                // Replace errors with data
+                strJSON = strJSON.Replace("errors", "data");
+
+                // Call AI
+                strJSON = await OpenAIService.CallOpenAIServiceToGetJSON(strJSON);
+
+                // Parse the JSON
+                ValidationDatas json = JsonConvert.DeserializeObject<ValidationDatas>(strJSON);
+
+                // If there is data, then highlight the cells
+                if (json.Data.Count > 0)
+                {
+                    sheet.BatchUpdates();
+
+                    // Loop through the JSON and highlight the cells
+                    foreach (var item in json.Data)
+                    {
+                        int row = Convert.ToInt32(item.RowNumber);
+                        int column = Convert.ToInt32(item.ColumnNumber);
+
+                        sheet.Cells[(row - 1), (column - 1)].Format = new CellFormat() { BackgroundColor = "yellow", ForegroundColor = "black", FontWeight = "bold" };
+                    }
+
+                    sheet.EndBatchUpdates();
+                    CanApplyChanges = true;
+                }
+                else
+                {
+                    Message = "No JSON data was returned.";
+                    CanApplyChanges = false;
+                }
+
+                StateHasChanged();
+            }            
+        }
+        catch (Exception ex)
+        {
+            Message = ex.GetBaseException().Message;
+        }
+    }
+
+    private void btnShowLog()
+    {
+        ShowLog = !ShowLog;
+    }
+
+    private async Task btnApplyChanges()
+    {
+        try
+        {
+            Message = "";
+            strAIResponse = "";
+            IsLoading = true;
+
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+
+                sb.AppendLine("");
+                sb.AppendLine("Infer any validation rules such as spelling or formatting or other logical rules. ");
+                sb.AppendLine("Infer that any changed data is the correct data and the previous data is incorrect. ");
+                sb.AppendLine("");
+
+                sb.AppendLine("");
+                sb.AppendLine("Please indicate what cells in #Updated, that have not been updated, ");
+                sb.AppendLine("should have their values updated based on the validation rules. ");
+                sb.AppendLine("As the final response please return a .json result surounded by ###JSON-START and JSON-END###. ");
+                sb.AppendLine("Use this format: [{ 'row number': 'value', 'column number': 'value', 'updated value': 'value'}]");
+                sb.AppendLine("For example: ");
+                sb.AppendLine("{'row number': '1', 'column number': '2', 'updated value': '5'},");
+                sb.AppendLine("{'row number': '2', 'column number': '4', 'updated value': '(213) 555-1212'}");
+                sb.AppendLine("");
+
+                // *** Call AI
+                ChatMessages.Add(new UserChatMessage(sb.ToString()));
+               
+
+                // Call the OpenAI service
+                ChatMessages = await OpenAIService.CallOpenAIService(ChatMessages);
+
+                // Get the last response
+               
+                 strAIResponse = ChatMessages.LastOrDefault().Content[0].Text ;
+               
+
+                // Get the JSON response from the content between ###JSON-START and JSON-END###
+                int intStart = strAIResponse.IndexOf("###JSON-START###");
+                int intEnd = strAIResponse.IndexOf("###JSON-END###");
+
+                // Get the JSON from the response
+                string strJSON = "";
+
+                if (intStart > 0 && intEnd > 0)
+                {
+                    strJSON = strAIResponse.Substring(intStart + 16, intEnd - intStart - 16);
+                }
+
+                // If the JSON is not empty, then parse it
+                if (!string.IsNullOrEmpty(strJSON))
+                {
+                    // Strip out ```json
+                    strJSON = strJSON.Replace("```json", "");
+
+                    // Strip out ```
+                    strJSON = strJSON.Replace("```", "");
+
+                    // Replace errors with data
+                    strJSON = strJSON.Replace("errors", "data");
+
+                    // Call AI
+                    strJSON = await OpenAIService.CallOpenAIServiceToGetJSON(strJSON);
+
+                    // Parse the JSON
+                    DataValues json = JsonConvert.DeserializeObject<DataValues>(strJSON);
+
+                    // If there is data...
+                    if (json.Data.Count > 0)
+                    {
+                        sheet.BatchUpdates();
+
+                        // Loop through the JSON and update the cells
+                        foreach (var item in json.Data)
+                        {
+                            try
+                            {       
+                                int row = Convert.ToInt32(item.RowNumber);
+                                int column = Convert.ToInt32(item.ColumnNumber);
+                                string value = item.UpdatedValue;
+
+                                sheet.Cells[(row - 1), (column - 1)].Clear();
+                                sheet.Cells[(row - 1), (column - 1)].Value = value;
+
+                                sheet.Cells[(row - 1), (column - 1)].Format = new CellFormat() { BackgroundColor = "lightgreen", ForegroundColor = "black", FontWeight = "bold" };
+                            }
+                            catch { }
+                        }
+
+                        sheet.EndBatchUpdates();
+
+                        CanApplyChanges = true;
+                    }
+                    else
+                    {
+                        Message = "No JSON data was returned.";
+                        CanApplyChanges = false;
+                    }
+
+                    StateHasChanged();
+                }
+            }
+            catch (Exception ex)
+            {
+                Message = ex.GetBaseException().Message;
+            }
+
+            IsLoading = false;
+        }
+        catch (Exception ex)
+        {
+            Message = ex.GetBaseException().Message;
+        }
+    }
+
+    // Classes
+
+    public class ValidationError
+    {
+        [JsonProperty("row number")]
+        public string RowNumber { get; set; }
+
+        [JsonProperty("column number")]
+        public string ColumnNumber { get; set; }
+
+        [JsonProperty("validation Reason")]
+        public string ValidationReason { get; set; }
+    }
+
+    public class ValidationDatas
+    {
+        [JsonProperty("data")]
+        public List<ValidationError> Data { get; set; }
+    }
+
+    public class DataValue
+    {
+        [JsonProperty("row number")]
+        public string RowNumber { get; set; }
+
+        [JsonProperty("column number")]
+        public string ColumnNumber { get; set; }
+
+        [JsonProperty("updated value")]
+        public string UpdatedValue { get; set; }
+    }
+
+    public class DataValues
+    {
+        [JsonProperty("data")]
+        public List<DataValue> Data { get; set; }
+    }
+}

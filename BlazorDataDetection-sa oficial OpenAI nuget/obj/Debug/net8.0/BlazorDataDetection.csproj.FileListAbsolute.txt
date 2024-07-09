@@ -1,0 +1,144 @@
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\appsettings.Development.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\appsettings.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDataDetection.staticwebassets.runtime.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDataDetection.exe
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDataDetection.deps.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDataDetection.runtimeconfig.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDataDetection.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDataDetection.pdb
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDatasheet.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDatasheet.Core.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDatasheet.DataStructures.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDatasheet.Formula.Core.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\BlazorDatasheet.Formula.Functions.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\Newtonsoft.Json.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.csproj.AssemblyReference.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.AssemblyInfoInputs.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.AssemblyInfo.cs
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.csproj.CoreCompileInputs.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.MvcApplicationPartsAssemblyInfo.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\staticwebassets.build.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\staticwebassets.development.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\staticwebassets\msbuild.BlazorDataDetection.Microsoft.AspNetCore.StaticWebAssets.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\staticwebassets\msbuild.build.BlazorDataDetection.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlazorDataDetection.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorDataDetection.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\staticwebassets.pack.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\scopedcss\bundle\BlazorDataDetection.styles.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\scopedcss\projectbundle\BlazorDataDetection.bundle.scp.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDa.6C8A03DD.Up2Date
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\refint\BlazorDataDetection.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.pdb
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\BlazorDataDetection.genruntimeconfig.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\obj\Debug\net8.0\ref\BlazorDataDetection.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\OpenAI.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\System.ClientModel.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection\bin\Debug\net8.0\System.Memory.Data.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.csproj.AssemblyReference.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.AssemblyInfoInputs.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.AssemblyInfo.cs
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.csproj.CoreCompileInputs.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.MvcApplicationPartsAssemblyInfo.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\appsettings.Development.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\appsettings.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.staticwebassets.runtime.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.exe
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.deps.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.runtimeconfig.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.pdb
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.Core.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.DataStructures.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.Formula.Core.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.Formula.Functions.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.JSInterop.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Newtonsoft.Json.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\OpenAI.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\System.ClientModel.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\System.Memory.Data.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets.build.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets.development.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.BlazorDataDetection.Microsoft.AspNetCore.StaticWebAssets.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.build.BlazorDataDetection.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlazorDataDetection.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorDataDetection.props
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets.pack.json
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\bundle\BlazorDataDetection.styles.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\projectbundle\BlazorDataDetection.bundle.scp.css
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDa.6C8A03DD.Up2Date
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\refint\BlazorDataDetection.dll
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.pdb
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.genruntimeconfig.cache
+\\Mac\PRO-G40\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\ref\BlazorDataDetection.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\appsettings.Development.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\appsettings.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.staticwebassets.runtime.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.exe
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.deps.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.runtimeconfig.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDataDetection.pdb
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.Core.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.DataStructures.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.Formula.Core.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\BlazorDatasheet.Formula.Functions.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Microsoft.JSInterop.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\Newtonsoft.Json.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\OpenAI.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\System.ClientModel.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\bin\Debug\net8.0\System.Memory.Data.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.csproj.AssemblyReference.cache
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.GeneratedMSBuildEditorConfig.editorconfig
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.AssemblyInfoInputs.cache
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.AssemblyInfo.cs
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.csproj.CoreCompileInputs.cache
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.MvcApplicationPartsAssemblyInfo.cache
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets.build.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets.development.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.BlazorDataDetection.Microsoft.AspNetCore.StaticWebAssets.props
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.build.BlazorDataDetection.props
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlazorDataDetection.props
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorDataDetection.props
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\staticwebassets.pack.json
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\bundle\BlazorDataDetection.styles.css
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\scopedcss\projectbundle\BlazorDataDetection.bundle.scp.css
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDa.6C8A03DD.Up2Date
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\refint\BlazorDataDetection.dll
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.pdb
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\BlazorDataDetection.genruntimeconfig.cache
+W:\CodeExamples\BlazorDataDetection-sa oficial OpenAI nuget\obj\Debug\net8.0\ref\BlazorDataDetection.dll
